@@ -4,8 +4,6 @@ import api from '../api/axios'
 
 const BlogDetail = () => {
 
-    const backendUrl = import.meta.env.VITE_BACKEND_URL;
-
     const navigate = useNavigate();
 
     const { id } = useParams();
@@ -94,7 +92,7 @@ const BlogDetail = () => {
                         <div className="row">
                             {blog.images.map((image) => (
                                 <div className="col-12 col-lg-4 col-md-6 mb-3" key={image.id}>
-                                    <img src={`${backendUrl}${image.image}`} alt="Blog" className='img-fluid rounded' style={{height: "18rem", width: "100%"}} />
+                                    <img src={image.image} alt="Blog" className='img-fluid rounded' style={{height: "18rem", width: "100%"}} />
                                 </div>
                             ))}
                         </div>

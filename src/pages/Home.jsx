@@ -4,8 +4,6 @@ import api from "../api/axios";
 
 const Home = () => {
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL
-
   const [blogs, setBlogs] = useState([]);
   const [search, setSearch] = useState("");
 
@@ -127,10 +125,10 @@ const Home = () => {
 
       <div className="row">
         {blogs.map((blog) => (
-          <div className="col-12 col-lg-4 col-md-6" key={blog.id}>
+          <div className="col-12 col-lg-4 col-md-6 mb-3" key={blog.id}>
             <div className="card h-100 shadow">
               {blog.images.length > 0 && (
-                <img src={`${backendUrl}${blog.images[0].image}`} className="card-img-top" alt={blog.title} style={{height: "16rem"}} />
+                <img src={blog.images[0].image} className="card-img-top" alt={blog.title} style={{height: "16rem"}} />
               )}
               <div className="card-body">
                 <h5>{blog?.title}</h5>
